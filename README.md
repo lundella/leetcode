@@ -1,5 +1,5 @@
 # LeetCode Problems Solving
 
-## Problems List
+## Solved Problems List
 #### Easy
 - 13. Roman to Integer
