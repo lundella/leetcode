@@ -4,8 +4,8 @@
  */
 
 // ** RESULT **
-// Runtime: 168 ms
-// Memory Usage: 39.8 MB
+// Runtime: 168 ms, faster than 14.01% of JavaScript online submissions for Roman to Integer.
+// Memory Usage: 39.8 MB, less than 51.06% of JavaScript online submissions for Roman to Integer.
 var romanToInt = function(s) {
     const RomanSet = {
       "I": 1,
