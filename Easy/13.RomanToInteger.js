@@ -2,8 +2,12 @@
  * @param {string} s
  * @return {number}
  */
+
+// ** RESULT **
+// Runtime: 168 ms
+// Memory Usage: 39.8 MB
 var romanToInt = function(s) {
-    const romanSet = {
+    const RomanSet = {
       "I": 1,
       "V": 5,
       "X": 10,
@@ -12,38 +16,15 @@ var romanToInt = function(s) {
       "D": 500,
       "M": 1000
     }
-    let result = [];
-    let ii = 0;
-
-    let characterList = s.split("");
-
-    let translateInt = characterList.map((char, index)=>{
-      return romanSet[char];
-    })
-
-    console.log(translateInt);
+    let result = 0;
     
-    for(let i=0; i < characterList.length-1; i++) {
-      if(i === 0) { result += translateInt[i]; }
-
-      if(translateInt[i] === translateInt[i+1]) {
-        result[ii] += translateInt[i+1];
-      } else if(translateInt[i] < translateInt[i+1]){
-        result[ii] = translateInt[i+1] - result[ii];
-        // ii++;
-      } else if(translateInt[i] > translateInt[i+1]){
-        result[ii] += translateInt[i+1];
+    for(let i=0; i < s.length; i++) {
+      if((i === 0) || (RomanSet[s[i]] <= RomanSet[s[i-1]])) {
+        result += RomanSet[s[i]];
+      } else {
+        result += (RomanSet[s[i]] - 2 * RomanSet[s[i-1]]);
       }
     }
 
-
-
-    // result = characterList;
-
-
-
     return result;
 };
-
-
-console.log(romanToInt("MCMXCIV"));
