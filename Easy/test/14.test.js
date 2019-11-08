@@ -6,6 +6,14 @@ const testEample = [
     output: "c"
   },
   {
+    input: ["a", "b"],
+    output: ""
+  },
+  {
+    input: ["aa", "aa"],
+    output: "aa"
+  },
+  {
     input: ["a", ""],
     output: ""
   },
@@ -16,7 +24,15 @@ const testEample = [
   {
     input: ["dog","racecar","car"],
     output: ""
-  }
+  },
+  {
+    input: [],
+    output: ""
+  },
+  {
+    input: [""],
+    output: ""
+  },
 ];
 
 
