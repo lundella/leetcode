@@ -38,4 +38,4 @@ var longestCommonPrefix = function(strs) {
 
 };
 
-console.log(longestCommonPrefix(["aba", "cba"]))
+module.exports = longestCommonPrefix
