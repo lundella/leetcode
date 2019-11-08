@@ -4,6 +4,7 @@
 #### Easy
 - 13. Roman to Integer
 - 14. Longest Common Prefix [with test code]
+- 20. Valid Parentheses [solving]
 
 
 ## Test Code
