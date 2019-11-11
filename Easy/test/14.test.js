@@ -1,6 +1,6 @@
 const solution = require('../14.LongestCommonPrefix');
 
-const testEample = [
+const testExample = [
   {
     input: ["c", "c"],
     output: "c"
@@ -36,7 +36,7 @@ const testEample = [
 ];
 
 
-describe.each(testEample)(
+describe.each(testExample)(
   'LongestCommonPrefix test',
   (testCase) => {
     let input = testCase.input;
