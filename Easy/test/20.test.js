@@ -39,6 +39,10 @@ const testExample = [
   {
     input: "]",
     output: false
+  },
+  {
+    input: "(])",
+    output: false
   }
 ];
 
