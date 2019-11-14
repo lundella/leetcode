@@ -10,37 +10,35 @@ var isValid = function (s) {
   }
   let inputArray = s.split("");
   let stackBrackets = [];
+  let interruption = false;
   let result = false;
 
   if(!s) {
     return true;
   }
 
-  // for(let i = 0; i < inputArray.length; i++) {
-  //   let bracket = inputArray[i];
-
-  //   if (stackBrackets.length && (bracket === Brackets[stackBrackets[stackBrackets.length - 1]])) {
-  //     stackBrackets.pop();
-  //   }
-
-  //   console.log(i);
-  //   if (Brackets[bracket]) {
-  //     stackBrackets.push(bracket);
-  //   }
-  // }
-  inputArray.forEach((bracket, index)=>{
-    if (stackBrackets.length && (bracket === Brackets[stackBrackets[stackBrackets.length - 1]])) { 
+  for(let i = 0; i < inputArray.length; i++) {
+    if (stackBrackets.length && (inputArray[i] === Brackets[stackBrackets[stackBrackets.length - 1]])) {
       stackBrackets.pop();
     }
 
-    if(Brackets[bracket]) {
-      stackBrackets.push(bracket);
+    if (Brackets[inputArray[i]]) {
+      stackBrackets.push(inputArray[i]);
     }
-  });
-  result = stackBrackets.length? false: true;
+
+    if ((i === 0) && !stackBrackets.length) {
+      interruption = true;
+      break;
+    }
+  }
+
+  if(interruption) {
+    result = false;
+  } else {
+    result = stackBrackets.length ? false: true;
+  }
 
   return result;
 };
 
-console.log(isValid("]()"));
 module.exports = isValid;
