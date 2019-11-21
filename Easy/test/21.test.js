@@ -1,25 +1,27 @@
 const solution = require('../21.MergeTwoSortedLists');
 const testExample = [
   {
-    input: [[1, 2, 4], [1, 3, 4]],
-    output: [1, 1, 2, 3, 4, 4]
+    input: [
+        {val: 1, next:{ val:2, next:{val:4, next: null}}}, 
+        {val: 1, next:{ val:3, next:{val:4, next: null}}}
+    ],
+    output: {val: 1, next:{ val:1, next:{val:2, next: {val:3, next: {val:4, next: {val:4, next: null}}}}}}
+
   },
   {
-    input: [[1, 1, 1], [2, 2, 3, 4]],
-    output: [1, 1, 1, 2, 2, 3, 4]
+    input: [
+      {val: 1, next:{ val:1, next:{val:1, next: null}}}, 
+      {val: 2, next:{ val:2, next:{val:3, next: {val:4, next: null}}}}
+    ],
+    output: {val: 1, next:{ val:1, next:{val:1, next: {val:2, next: {val:2, next: {val:3, next: {val:4, next: null}}}}}}}
   },
   {
-    input: [[3, 7, 8], [1, 2, 3, 4]],
-    output: [1, 2, 3, 3, 4, 7, 8]
-  },
-  {
-    input: [[], [2, 3, 4]],
-    output: [2, 3, 3]
-  },
-  {
-    input: [[3, 3, 3], []],
-    output: []
-  },
+    input: [
+      {val: 3, next:{ val:7, next:{val:8, next: null}}}, 
+      {val: 1, next:{ val:2, next:{val:3, next: {val:4, next: null}}}}
+    ],
+    output: {val: 1, next:{ val:2, next:{val:3, next: {val:3, next: {val:4, next: {val:7, next: {val:8, next: null}}}}}}}
+  }
 ];
 
 describe.each(testExample)(
@@ -30,7 +32,7 @@ describe.each(testExample)(
     let expected = testCase.output;
 
     test(`Test [${input1, input2}] to be ${expected}`, () => {
-      expect(solution(input1, input2)).toEqual(expect.arrayContaining(expected));
+      expect(solution(input1, input2)).toMatchObject(expected);
     })
   }
 )

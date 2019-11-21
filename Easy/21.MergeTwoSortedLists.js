@@ -11,22 +11,43 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
-    let index1 = 0;
-    let index2 = 0;
+    let value1 = l1;
+    let value2 = l2;
     let iterator = true;
+    let iterated = 1;
     let result = [];
+    let returneformat = {}
 
     while (iterator) {
-      if (l2[index2] <= l1[index1] || l1[index1] === undefined) {
-        result.push(l2[index2]);
-        index2++;
+      if (value2 && (value1 === null || value2.val <= value1.val)) {
+        result.push(value2.val);
+
+        value2 = value2.next;
       } else {
-        result.push(l1[index1]);
-        index1++;
+        result.push(value1.val);
+        value1 = value1.next;
       }
-      iterator = ((index1+index2) < (l1.length+l2.length)) ? true : false;
+      iterator = ((value1 === null) && (value2 === null)) ? false : true;
+      iterated += 1;
     }
 
+    for(let index = 0; index < iterated; index++) {
+      let tempObjectFormat = {
+        val: result[index],
+        next: null
+      }
+      if(!returneformat.val) {
+        returneformat = {
+          val: result[index],
+          next: null
+        }
+      } else if(returneformat.next === null){
+        returneformat.next = {
+          val: result[index],
+          next: null
+        }
+      }
+    }
     return result;
 };
 
