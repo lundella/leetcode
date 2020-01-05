@@ -7,6 +7,7 @@
 - 20. Valid Parentheses [with test code]
 - 21. Merge Two Sorted Lists [with test code]
 - 26. Remove Duplicates from Sorted Array [with test code]
+- 27. Remove Element [with test code]
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
