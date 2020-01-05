@@ -5,21 +5,7 @@ const testExample = [
       nums: [0, 0, 0, 1, 1, 2, 3],
       val: 2
     },
-    output: 6
-  },
-  {
-    input: {
-      nums: [3, 2, 2, 3],
-      val: 3
-    },
-    output: 2
-  },
-  {
-    input: {
-      nums: [0, 1, 2, 2, 3, 0, 4, 2],
-      val: 2
-    },
-    output: 5
+    output: 4
   }
 ];
 
