@@ -8,7 +8,8 @@
 - 21. Merge Two Sorted Lists [with test code]
 - 26. Remove Duplicates from Sorted Array [with test code]
 - 27. Remove Element [with test code]
-- 28. Implement strStr
+- 28. Implement strStr [with test code]
+- 35. Search Insert Position
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
