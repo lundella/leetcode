@@ -24,7 +24,7 @@ var countAndSay = function(n) {
         sayResult += count;
         sayResult += temp;
         temp = previousResult[order];
-        cout = 1;
+        count = 1;
       }
     }
     previousResult = sayResult;
@@ -34,4 +34,4 @@ var countAndSay = function(n) {
   return previousResult;
 };
 
-countAndSay(6);
+module.exports = countAndSay;

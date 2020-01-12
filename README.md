@@ -10,7 +10,7 @@
 - 27. Remove Element [with test code]
 - 28. Implement strStr [with test code]
 - 35. Search Insert Position
-- 38. Count and Say
+- 38. Count and Say [with test code]
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
