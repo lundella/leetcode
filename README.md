@@ -11,6 +11,7 @@
 - 28. Implement strStr [with test code]
 - 35. Search Insert Position
 - 38. Count and Say [with test code]
+- 53. Maximum Subarray
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
