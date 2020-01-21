@@ -12,6 +12,7 @@
 - 35. Search Insert Position
 - 38. Count and Say [with test code]
 - 53. Maximum Subarray
+- 58. Length of Last Word
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
