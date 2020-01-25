@@ -3,18 +3,20 @@
  * @return {number[]}
  */
 var plusOne = function (digits) {
-  let lastOne = digits[digits.length-1] + 1;
+  let figure = digits.join('');
+  console.log(figure);
 
-  if(lastOne >= 10) {
-    let addElements = lastOne.toString().split("");
+  // figure = figure + 1;
 
-    digits.splice(digits.length-1, 1);
-    digits = digits.concat(addElements);
-  } else {
-    digits[digits.length - 1] = lastOne;
-  }
+  let result = figure.toString().split('');
+  console.log(figure);
 
-  return digits;
+  return result;
 };
 
+plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3]);
+
 module.exports = plusOne;
+// 6145390195186705543
+// 6145390195186705000
+// 9007199254740991

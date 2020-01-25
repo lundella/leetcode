@@ -13,6 +13,7 @@
 - 38. Count and Say [with test code]
 - 53. Maximum Subarray
 - 58. Length of Last Word
+- 66. Plus One [with test code]
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
