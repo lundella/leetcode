@@ -14,6 +14,7 @@
 - 53. Maximum Subarray
 - 58. Length of Last Word
 - 66. Plus One [with test code]
+- 67. Add Binary
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
