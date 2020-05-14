@@ -3,49 +3,55 @@
  * @param {string} b
  * @return {string}
  */
-var addBinary = function (a, b) {
-  let firstBinary = a.split('');
-  let secondBinary = b.split('');
-  let plusNextCount = 0;
+// var addBinary = function (a, b) {
+//   let pointCount = (a.length > b.length) ? a.length : b.length;
+//   let first = a.split('').reverse();
+//   let second = b.split('').reverse();
+//   let result = [];
+  
+//   for (let index = 0; index < pointCount; index++) {
+//     if(!result[index]) {
+//       if(first[index] || second[index]) {
+//         result.push(1);
+//       } else {
+//         result.push(0);
+//       }
+//     } else {
+//       if (first[index] || second[index]) {
+//         result.push(0);
+//       } else {
+//         result.push(1);
+//       }
+//     }
+//   }
+// };
+
+function addBinary (a, b) {
+  let pointCount = (a.length > b.length) ? a.length : b.length;
   let result = [];
-
-  let indexCount = (firstBinary.length > secondBinary.length) ? firstBinary.length: secondBinary.length;
+  let temp = 0;
   
-  for(var index = indexCount-1; 0 <= index; index--) {
-    console.log(parseInt(firstBinary[index]), secondBinary[index]);
-    let firstAttr = parseInt(firstBinary[index]);
-    let secondAttr = parseInt(secondBinary[index]);
+  for(let index = 1; index <= pointCount ; index++) {
+    let add = ((a[a.length - index]) ? parseInt(a[a.length - index]) : 0)
+              + ((b[b.length - index]) ? parseInt(b[b.length - index]) : 0)
+              + temp;
 
-    if(firstAttr && secondAttr) {
-      console.log('all case : ', plusNextCount);
-      if(plusNextCount) {
-        result.unshift(1);
-      } else {
-        result.unshift(0);
-      }
-      plusNextCount = 1;
-    } else if(firstAttr || secondAttr) {
-      console.log('or case : ', plusNextCount);
-      if(plusNextCount) {
-        result.unshift(0);
-        plusNextCount = 1;
-      } else {
-        result.unshift(1);
-      }
-    } else if(!firstAttr && !secondAttr) {
-      console.log('empty case : ', plusNextCount);
-      if(plusNextCount) {
-        result.unshift(1);
-      } else {
-        result.unshift(0);
-      }
+    if(add == 3) {
+      temp = 1;
+      result.splice(0, 0, 1);
+    } else if(add == 2){
+      temp = 1;
+      result.splice(0, 0, 0);
+    } else if (add == 1) {
+      temp = 0;
+      result.splice(0, 0, 1);
+    } else {
+      temp = 0;
+      result.splice(0, 0, 0);
     }
-    console.log(result);
   }
-  // result = result.join(',');
+  if (temp) { result.splice(0, 0, 1);}
 
-  
-};
-
-addBinary("1010", "1011");
+  return result.join('');
+}
 module.exports = addBinary;
