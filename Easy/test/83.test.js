@@ -1,4 +1,5 @@
 const solution = require('../83.RemoveDuplicatesFromSortedList');
+// const solution = require('../83.solution');
 const testExample = [
   {
     input: {},
@@ -6,44 +7,44 @@ const testExample = [
   },
   {
     input: {
-      value: 1,
+      val: 1,
       next: null
     },
     output: {
-      value: 1,
+      val: 1,
       next: null
     }
   },
   {
     input: {
-      value: 1,
+      val: 1,
       next: {
-        value: 1,
+        val: 1,
         next: {
-          value: 2,
+          val: 2,
           next: null
         }
       }
     },
     output: {
-      value: 1,
+      val: 1,
       next: {
-        value: 2,
+        val: 2,
         next: null
       }
     }
   },
   {
     input: {
-      value: 1,
+      val: 1,
       next: {
-        value: 1,
+        val: 1,
         next: {
-          value: 2,
+          val: 2,
           next: {
-            value: 3,
+            val: 3,
             next: {
-              value: 3,
+              val: 3,
               next: null
             }
           }
@@ -51,11 +52,11 @@ const testExample = [
       }
     },
     output: {
-      value: 1,
+      val: 1,
       next: {
-        value: 2,
+        val: 2,
         next: {
-          value: 3,
+          val: 3,
           next: null
         }
       }
@@ -64,7 +65,7 @@ const testExample = [
 ];
 
 describe.each(testExample)(
-  'Climbing Stairs',
+  'Remove Duplicates From SortedList',
   (testCase) => {
     const input = testCase.input;
     const expected = testCase.output;
