@@ -11,7 +11,7 @@
 - 28. Implement strStr [with test code]
 - 35. Search Insert Position
 - 38. Count and Say [with test code]
-- 53. Maximum Subarray
+- 53. Maximum Subarray [with test code]
 - 58. Length of Last Word
 - 66. Plus One [with test code]
 - 67. Add Binary

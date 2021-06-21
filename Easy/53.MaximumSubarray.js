@@ -45,3 +45,5 @@ var maxSubArray = function (nums) {
 
   return max_num;
 };
+
+module.exports = maxSubArray;
