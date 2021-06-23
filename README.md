@@ -16,6 +16,7 @@
 - 66. Plus One [with test code]
 - 67. Add Binary
 - 88. Merge Sorted Array [with test code]
+- 118. Paskal`s Triangle [with test code]
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
