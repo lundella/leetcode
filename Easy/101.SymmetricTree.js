@@ -10,64 +10,53 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
-function preOrder(node) {
+ function ordering(node, reverse = false) {
   let list = [];
   let rightOrder = [];
   let leftOrder = [];
 
   if (!node) {
-    list.push(node);
+      list.push(node);
   } else {
-    node.val && (list.push(node.val));
-  }
-  if (node.right === null) {
-    rightOrder.push(null);
-  } else {
-    rightOrder = preOrder(node.right);
-  }
-  if (node.left === null) {
-    leftOrder.push(null);
-  } else {
-    leftOrder = preOrder(node.left);
+      node.val && (list.push(node.val));
   }
 
-  return [...list, ...leftOrder, ...rightOrder];
+  if (!node || node.right === null) {
+      rightOrder.push(null);
+  } else {
+      rightOrder = ordering(node.right, reverse);
+  }
+  if (!node || node.left === null) {
+      leftOrder.push(null);
+  } else {
+      leftOrder = ordering(node.left, reverse);
+  }
+  
+  if(reverse) {
+      list = [...list, ...rightOrder, ...leftOrder];
+  } else {
+      list = [...list, ...leftOrder, ...rightOrder];
+  }
+
+  return list;
 }
-function reversePreOrder(node) {
-  let list = [];
-  let rightOrder = [];
-  let leftOrder = [];
 
-  console.log('node is null', node);
-  if (node === null) {
-    console.log('node is null');
-    list.push(node);
-  } else {
-    node.val && (list.push(node.val));
-  }
-
-  if (node.right === null) {
-    rightOrder.push(null);
-  } else {
-    rightOrder = reversePreOrder(node.right);
-  }
-  if (node.left === null) {
-    leftOrder.push(null);
-  } else {
-    leftOrder = reversePreOrder(node.left);
-  }
-
-  return [...list, ...rightOrder, ...leftOrder];
-}
 var isSymmetric = function (root) {
-  const orderList = preOrder(root.left);
-  const reverseList = reversePreOrder(root.right)
+const orderList = ordering(root.left);
+const reverseList = ordering(root.right, true)
+let result = true;
+  
+if(orderList.length !== reverseList.length) {
+    result = false;
+    return result;
+}
+  
+for(let index=0; index < orderList.length; index++) {
+  if (orderList[index] !== reverseList[index]) {
+    result = false;
+    break;
+  }      
+}
 
-  let result = true;
-  orderList.forEach((value, index) => {
-    if (value !== reverseList[index]) {
-      result = false;
-    }
-  })
-  return result;
+return result;
 };
