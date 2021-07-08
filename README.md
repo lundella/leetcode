@@ -18,6 +18,7 @@
 - 88. Merge Sorted Array [with test code]
 - 94. Binary Tree Inorder Traversal
 - 100. Same Tree
+- 101. Symmetric Tree
 - 118. Paskal`s Triangle [with test code]
 
 ## Test Code
