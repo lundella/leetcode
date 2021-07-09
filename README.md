@@ -19,6 +19,7 @@
 - 94. Binary Tree Inorder Traversal
 - 100. Same Tree
 - 101. Symmetric Tree
+- 104. Maximum Depth of Binary Tree
 - 118. Paskal`s Triangle [with test code]
 
 ## Test Code
