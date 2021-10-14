@@ -4,11 +4,12 @@
  */
 var maxProfit = function (prices) {
   // 모든 순서 비교하여 최대 이익 찾기
+  // O(n log n)
   let profit = 0;
 
   prices.forEach((target, day) => {
-    for (let nextDay = day+1; nextDay < prices.length; nextDay++) {
-      if (target > prices[nextDay]) return;
+    for (let nextDay = day + 1; nextDay < prices.length; nextDay++) {
+      if (!prices[nextDay] || (target > prices[nextDay])) return;
 
       let nextDayPrice = prices[nextDay] - target;
 
