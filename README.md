@@ -21,6 +21,7 @@
 - 101. Symmetric Tree
 - 104. Maximum Depth of Binary Tree
 - 118. Paskal`s Triangle [with test code]
+- 136. Single Number
 
 ## Test Code
 Using Javascript Testing Framework [Jest](https://jestjs.io)
